@@ -47,7 +47,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../styles/_config.scss";
+@import "../styles/app";
 
 body {
   background: $color-bg;
