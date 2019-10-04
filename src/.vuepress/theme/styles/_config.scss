@@ -1,0 +1,41 @@
+// responsive breakpoints
+$MQNarrow: 959px;
+$MQMobile: 719px;
+$MQMobileNarrow: 419px;
+
+// colors
+$color-primary: #ec506e;
+$color-bg: #242637;
+$color-text: #fafafa;
+
+// ======================================
+
+// colors
+$accentColor: $color-primary;
+$textColor: $color-text;
+$borderColor: #eaecef;
+$codeBgColor: #282c34;
+$arrowBgColor: #ccc;
+
+// layout
+$navbarHeight: 3.6rem;
+$sidebarWidth: 20rem;
+$contentWidth: 740px;
+
+// code
+$lineNumbersWrapperWidth: 3.5rem;
+$codeLang: js ts html md vue css sass scss less stylus go java c sh yaml py;
+
+.wrapper {
+  max-width: $contentWidth;
+  margin: 0 auto;
+  padding: 2rem 2.5rem;
+
+  @media (max-width: $MQNarrow) {
+    padding: 2rem;
+  }
+
+  @media (max-width: $MQMobileNarrow) {
+    padding: 1.5rem;
+  }
+}
