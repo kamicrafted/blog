@@ -1,40 +1,47 @@
 <template>
-  <div class="blog">
-    <div class="blog__header">
-      <p class="publish-date">
-        <time :datetime="$frontmatter.date">{{ publishDate }}</time>
-      </p>
-      <p v-if="$page.readingTime">Time to read: {{ $page.readingTime.text }}</p>
-      <h1 class="blog__title">{{ $page.title }}</h1>
-    </div>
-
-    <Content class="custom" />
-
-    <div class="page-edit">
-      <div class="edit-link" v-if="editLink">
-        <a :href="editLink" target="_blank" rel="noopener noreferrer">{{ editLinkText }}</a>
-        <OutboundLink />
+  <div class="post">
+    <div class="hero hero--fullwidth">
+      <div class="hero__image"> 
+        <img src="https://miro.medium.com/max/5120/1*K8nqevbb3a-GWxuufuZ7uQ.png" class="hero__artwork" alt="">
       </div>
-      <div class="last-updated" v-if="lastUpdated">
-        <span class="prefix">{{ lastUpdatedText }}:</span>
-        <time class="time" :datetime="$page.lastUpdated">{{ lastUpdated }}</time>
+      <div class="blog__header">
+        <p class="publish-date">
+          <time :datetime="$frontmatter.date">{{ publishDate }}</time>
+        </p>
+        <p v-if="$page.readingTime">Time to read: {{ $page.readingTime.text }}</p>
+        <h1 class="blog__title">{{ $page.title }}</h1>
       </div>
     </div>
 
-    <div class="page-nav" v-if="prev || next">
-      <p class="inner">
-        <span v-if="prev" class="prev">
-          ←
-          <router-link v-if="prev" class="prev" :to="prev.path">{{ prev.title || prev.path }}</router-link>
-        </span>
+    <div class="blog">
+      <Content class="custom" />
 
-        <span v-if="next" class="next">
-          <router-link v-if="next" :to="next.path">{{ next.title || next.path }}</router-link>→
-        </span>
-      </p>
+      <div class="page-edit">
+        <div class="edit-link" v-if="editLink">
+          <a :href="editLink" target="_blank" rel="noopener noreferrer">{{ editLinkText }}</a>
+          <OutboundLink />
+        </div>
+        <div class="last-updated" v-if="lastUpdated">
+          <span class="prefix">{{ lastUpdatedText }}:</span>
+          <time class="time" :datetime="$page.lastUpdated">{{ lastUpdated }}</time>
+        </div>
+      </div>
+
+      <div class="page-nav" v-if="prev || next">
+        <p class="inner">
+          <span v-if="prev" class="prev">
+            ←
+            <router-link v-if="prev" class="prev" :to="prev.path">{{ prev.title || prev.path }}</router-link>
+          </span>
+
+          <span v-if="next" class="next">
+            <router-link v-if="next" :to="next.path">{{ next.title || next.path }}</router-link>→
+          </span>
+        </p>
+      </div>
+
+      <slot name="bottom" />
     </div>
-
-    <slot name="bottom" />
   </div>
 </template>
 
@@ -198,14 +205,14 @@ function find(page, items, offset) {
 
 .blog {
   @extend .wrapper;
-}
 
-.blog__header {
-  padding-top: 4.6rem;
-}
+  &__header {
+    padding-top: 4.6rem;
+  }
 
-.blog__title {
-  margin-top: 0;
+  &__title {
+    margin-top: 0;
+  }
 }
 
 .publish-date {

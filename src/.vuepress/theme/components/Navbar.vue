@@ -114,7 +114,7 @@ $navbar-horizontal-padding: 1.5rem;
   }
 
   .site-name {
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: 600;
     color: white;
     position: relative;

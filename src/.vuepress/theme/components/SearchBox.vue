@@ -178,11 +178,11 @@ export default {
   }
 
   .suggestions {
-    background: #fff;
     width: 20rem;
     position: absolute;
     top: 1.5rem;
-    border: 1px solid darken($borderColor, 10%);
+    background: darken($color-bg, 5%);
+    border: 1px solid darken($color-bg, 10%);
     border-radius: 6px;
     padding: 0.4rem;
     list-style-type: none;

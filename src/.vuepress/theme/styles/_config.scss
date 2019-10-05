@@ -3,6 +3,8 @@ $MQNarrow: 959px;
 $MQMobile: 719px;
 $MQMobileNarrow: 419px;
 
+$mobileSidebarWidth: calc($sidebarWidth * 0.82);
+
 // colors
 $color-primary: #ec506e;
 $color-bg: #242637;
@@ -24,8 +26,11 @@ $contentWidth: 740px;
 
 // code
 $lineNumbersWrapperWidth: 3.5rem;
-$codeLang: js ts html md vue css sass scss less stylus go java c sh yaml py;
+$codeLang: js, ts, html, md, vue, css, sass, scss, less, stylus, go, java, c, sh, yaml, py;
 
+/* ========================================================
+Wrapper
+======================================================== */
 .wrapper {
   max-width: $contentWidth;
   margin: 0 auto;
@@ -39,3 +44,4 @@ $codeLang: js ts html md vue css sass scss less stylus go java c sh yaml py;
     padding: 1.5rem;
   }
 }
+/* END Wrapper ============================================ */
