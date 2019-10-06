@@ -2,6 +2,9 @@
   <header class="navbar">
     <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" />
 
+    <AlgoliaSearchBox v-if="isAlgoliaSearch" :options="algolia" />
+    <SearchBox v-else-if="$site.themeConfig.search !== false" />
+
     <router-link :to="$localePath" class="home-link">
       <img
         class="logo"
@@ -20,8 +23,6 @@
     <div class="links" :style="{
         'max-width': linksWrapMaxWidth + 'px'
       }">
-      <AlgoliaSearchBox v-if="isAlgoliaSearch" :options="algolia" />
-      <SearchBox v-else-if="$site.themeConfig.search !== false" />
       <NavLinks class="can-hide" />
     </div>
   </header>
@@ -89,6 +90,8 @@ $navbar-vertical-padding: 0.7rem;
 $navbar-horizontal-padding: 1.5rem;
 
 .navbar {
+  display: flex;
+  justify-content: space-between;
   padding: $navbar-vertical-padding $navbar-horizontal-padding;
   line-height: $navbarHeight - 1.4rem;
   position: relative;
@@ -125,14 +128,11 @@ $navbar-horizontal-padding: 1.5rem;
   }
 
   .links {
+    display: flex;
     padding-left: 1.5rem;
     box-sizing: border-box;
     white-space: nowrap;
     font-size: 0.9rem;
-    position: absolute;
-    right: $navbar-horizontal-padding;
-    top: $navbar-vertical-padding;
-    display: flex;
 
     .search-box {
       flex: 0 0 auto;
@@ -143,18 +143,19 @@ $navbar-horizontal-padding: 1.5rem;
       flex: 1;
     }
   }
+}
 
-  @media (max-width: $MQMobile) {
-    .navbar {
-      padding-left: 4rem;
+@media (max-width: $MQMobile) {
+  .navbar {
+    flex-direction: row-reverse;
+    padding-left: 4rem;
 
-      .can-hide {
-        display: none;
-      }
+    .can-hide {
+      display: none;
+    }
 
-      .links {
-        padding-left: 1.5rem;
-      }
+    .links {
+      padding-left: 1.5rem;
     }
   }
 }

@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   padding: 0;
   margin: 0;
 }
@@ -12,20 +13,59 @@ body {
   color: $color-text;
 }
 
-.page {
-  padding-left: $sidebarWidth;
+.icon {
+  width: 24px;
+
+  &-watch {
+    position: relative;
+    top: 3px;
+    width: 16px;
+    opacity: 0.5;
+  }
 }
 
-.navbar {
-  position: fixed;
-  z-index: 20;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: $navbarHeight;
-  background-color: #fff;
-  box-sizing: border-box;
-  border-bottom: 1px solid $borderColor;
+.read-time {
+  font-size: 0.85em;
+}
+
+.blog {
+  &-post {
+    &__button {
+      background-color: $color-primary;
+      color: white !important;
+      border: 1px solid darken($color-bg, 5%);
+
+      &:hover {
+        background-color: lighten($color-primary, 5%);
+      }
+    }
+  }
+
+  &-list {
+    &__tag {
+      margin-right: 5px;
+
+      > button {
+        background-color: rgba(black, 0.3);
+        color: rgba(white, 0.75);
+        border: none;
+        padding: 3px 8px 4px;
+        border-radius: 4px;
+
+        &:hover {
+          background-color: rgba(black, 0.8);
+        }
+      }
+    }
+  }
+}
+
+.link-title {
+  color: white;
+}
+
+.page {
+  padding-left: $sidebarWidth;
 }
 
 .sidebar-mask {
@@ -40,7 +80,7 @@ body {
 
 .sidebar {
   font-size: 15px;
-  background-color: #fff;
+  background-color: lighten($color-bg, 5%);
   width: $sidebarWidth;
   position: fixed;
   z-index: 10;
@@ -50,6 +90,7 @@ body {
   bottom: 0;
   box-sizing: border-box;
   border-right: 1px solid $borderColor;
+  box-shadow: 0 0 0 transparent;
   overflow-y: auto;
 }
 
@@ -106,12 +147,13 @@ kbd {
 blockquote {
   font-size: 1.2rem;
   color: #999;
-  border-left: .25rem solid #dfe2e5;
+  border-left: 0.25rem solid #dfe2e5;
   margin-left: 0;
   padding-left: 1rem;
 }
 
-ul, ol {
+ul,
+ol {
   padding-left: 1.2em;
 }
 
@@ -119,7 +161,12 @@ strong {
   font-weight: 600;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 600;
   line-height: 1.25;
 
@@ -131,14 +178,16 @@ h1, h2, h3, h4, h5, h6 {
     &:first-child {
       margin-top: -1.5rem;
       margin-bottom: 1rem;
-      + p, + pre, + .custom-block {
+      + p,
+      + pre,
+      + .custom-block {
         margin-top: 2rem;
       }
     }
   }
 
   &:hover .header-anchor {
-    opacity: 1
+    opacity: 1;
   }
 }
 
@@ -148,7 +197,7 @@ h1 {
 
 h2 {
   font-size: 1.65rem;
-  padding-bottom: .3rem;
+  padding-bottom: 1.3rem;
   border-bottom: 1px solid $borderColor;
 }
 
@@ -169,11 +218,16 @@ a.header-anchor {
   }
 }
 
-code, kbd, .line-number {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+code,
+kbd,
+.line-number {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
-p, ul, ol {
+p,
+ul,
+ol {
   line-height: 1.7;
 }
 
@@ -197,9 +251,10 @@ tr {
   }
 }
 
-th, td {
+th,
+td {
   border: 1px solid #dfe2e5;
-  padding: .6em 1em;
+  padding: 0.6em 1em;
 }
 
 .custom-layout {
@@ -214,9 +269,14 @@ th, td {
   }
 
   &.no-navbar {
-    .content:not(.custom) > h1, h2, h3, h4, h5, h6 {
-        margin-top: 1.5rem;
-        padding-top: 0;
+    .content:not(.custom) > h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: 1.5rem;
+      padding-top: 0;
     }
 
     .sidebar {
@@ -227,7 +287,6 @@ th, td {
     }
   }
 }
-
 
 @media (min-width: ($MQMobile + 1px)) {
   .theme-container.no-sidebar {

@@ -1,19 +1,31 @@
 <template>
   <div class="post">
-    <div class="hero hero--fullwidth">
-      <div class="hero__image"> 
-        <img src="https://miro.medium.com/max/5120/1*K8nqevbb3a-GWxuufuZ7uQ.png" class="hero__artwork" alt="">
+    <div v-if="$frontmatter.heroImage" class="hero hero--fullwidth">
+      <div class="hero__scrim"></div>
+      <div class="hero__image">
+        <img :src="$frontmatter.heroImage" class="hero__artwork" alt />
       </div>
       <div class="blog__header">
         <p class="publish-date">
           <time :datetime="$frontmatter.date">{{ publishDate }}</time>
         </p>
-        <p v-if="$page.readingTime">Time to read: {{ $page.readingTime.text }}</p>
         <h1 class="blog__title">{{ $page.title }}</h1>
+        <p class="read-time" v-if="$page.readingTime">
+          <img class="icon icon-watch" src="../assets/watch.svg" alt />
+          {{ $page.readingTime.text }}
+        </p>
       </div>
     </div>
 
     <div class="blog">
+      <div v-if="!$frontmatter.heroImage" class="blog__header">
+        <p class="publish-date">
+          <time :datetime="$frontmatter.date">{{ publishDate }}</time>
+        </p>
+        <h1 class="blog__title">{{ $page.title }}</h1>
+        <p class="read-time" v-if="$page.readingTime">{{ $page.readingTime.text }}</p>
+      </div>
+
       <Content class="custom" />
 
       <div class="page-edit">
