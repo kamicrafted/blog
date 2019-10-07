@@ -36,7 +36,8 @@ module.exports = {
       }
     ],
     "vuepress-plugin-reading-time",
-    "vuepress-plugin-janitor"
+    "vuepress-plugin-janitor",
+    "feather-icons"
   ],
   head: [
     [

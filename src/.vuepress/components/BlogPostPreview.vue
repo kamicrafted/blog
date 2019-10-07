@@ -1,4 +1,6 @@
 <script>
+import feather from 'feather-icons';
+
 export default {
   name: "BlogPostPreview",
   props: {
@@ -6,6 +8,11 @@ export default {
       type: Object,
       required: true
     }
+  },
+  methods: {
+    featherReplace: function () {
+      feather.replace()
+    },
   },
   computed: {
     formatPublishDate() {
@@ -18,6 +25,9 @@ export default {
 
       return dateFormat.toLocaleDateString("en-US", options);
     }
+  },
+  mounted () {
+    this.featherReplace()
   }
 };
 </script>
@@ -34,7 +44,7 @@ export default {
 
       <div class="preview__header-right">
         <p class="read-time" v-if="$page.readingTime">
-          <img class="icon icon-watch" src="../theme/assets/watch.svg" alt />
+          <i class="icon icon-watch" data-feather="watch"></i>
           {{ $page.readingTime.text }}
         </p>
       </div>

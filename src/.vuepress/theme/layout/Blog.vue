@@ -11,7 +11,7 @@
         </p>
         <h1 class="blog__title">{{ $page.title }}</h1>
         <p class="read-time" v-if="$page.readingTime">
-          <img class="icon icon-watch" src="../assets/watch.svg" alt />
+          <i class="icon icon-watch" data-feather="watch"></i>
           {{ $page.readingTime.text }}
         </p>
       </div>
@@ -23,7 +23,10 @@
           <time :datetime="$frontmatter.date">{{ publishDate }}</time>
         </p>
         <h1 class="blog__title">{{ $page.title }}</h1>
-        <p class="read-time" v-if="$page.readingTime">{{ $page.readingTime.text }}</p>
+        <p class="read-time" v-if="$page.readingTime">
+          <i class="icon icon-watch" data-feather="watch"></i>
+          {{ $page.readingTime.text }}
+        </p>
       </div>
 
       <Content class="custom" />
@@ -59,6 +62,7 @@
 
 <script>
 import { resolvePage, normalize, outboundRE, endingSlashRE } from "../util";
+import feather from 'feather-icons';
 
 export default {
   name: "Blog",
@@ -159,6 +163,9 @@ export default {
   },
 
   methods: {
+    featherReplace: function () {
+      feather.replace()
+    },
     createEditLink(repo, docsRepo, docsDir, docsBranch, path) {
       const bitbucket = /bitbucket.org/;
       if (bitbucket.test(repo)) {
@@ -183,6 +190,9 @@ export default {
         path
       );
     }
+  },
+  mounted () {
+    this.featherReplace()
   }
 };
 

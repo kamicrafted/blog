@@ -1,4 +1,6 @@
 <script>
+import feather from 'feather-icons';
+
 export default {
   name: "ArchiveList",
   props: {
@@ -54,6 +56,10 @@ export default {
     }
   },
   methods: {
+    featherReplace: function () {
+      feather.replace()
+    },
+
     getYears: function() {
       return [
         ...new Set(
@@ -102,7 +108,28 @@ export default {
       ];
 
       return months[value];
+    },
+    monthToShortName(value) {
+      const months = [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+      ];
+
+      return months[value];
     }
+  },
+  mounted () {
+    this.featherReplace()
   }
 };
 </script>
@@ -111,12 +138,18 @@ export default {
   <div class="archive">
     <div class="archive__group-year" v-for="year in getYears()">
       <div class="archive-year">{{year}}</div>
-      <div v-for="month in getMonths(year)">
+      <div class="archive__group-month" v-for="month in getMonths(year)">
         <div class="archive-month">{{month | monthToLongName}}</div>
         <ul class="archive-list">
           <li v-for="(item, index) in postsByDate(year, month)" class="archive-list__item">
-            <span class="archive-list__date">{{new Date(item.frontmatter.date).getDate()}}</span> -
-            <router-link :to="item.path">{{item.title}}</router-link>
+            <div class="archive-list__header">
+              <div class="archive-list__title">
+                <i class="icon icon-doc" data-feather="file-text"></i>
+                <router-link class="link-title" :to="item.path">{{item.title}}</router-link>
+              </div>
+              
+              <span class="archive-list__date">{{month | monthToShortName}} {{new Date(item.frontmatter.date).getDate()}}</span>
+            </div>
 
             <p class="archive-list__excerpt">
               {{item.frontmatter.excerpt}}
@@ -168,14 +201,38 @@ export default {
       }
     }
   }
+
+  &__group-month {
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 11px;
+      left: -3px;
+      width: 8px;
+      height: 8px;
+      background-color: $color-primary;
+    }
+  }
 }
 
 .archive-list {
   padding: 0;
   margin: 0;
 
+  &__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   &__date {
     font-weight: bold;
+    font-size: .75em;
+    text-transform: uppercase;
+    color: lighten($color-bg, 25%);
   }
 
   &__item {
@@ -186,7 +243,7 @@ export default {
     &:after {
       content: '';
       position: absolute;
-      top: 10px;
+      top: 15px;
       left: -35px;
       width: 8px;
       height: 8px;
@@ -221,6 +278,17 @@ export default {
       .archive-year {
         &:after {
           left: 0;
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          bottom: -30px;
+          left: -3px;
+          width: 8px;
+          height: 8px;
+          border-radius: 100%;
+          background-color: lighten($color-bg, 25%);
         }
       }
     }

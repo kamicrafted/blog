@@ -103,21 +103,23 @@ export default {
 
 <template>
   <div>
+    <!-- Show active filters -->
     <div v-if="selectedTags.length > 0" class="filtered-heading">
       <h2>Filtered by {{ selectedTags.join(',') }}</h2>
       <button type="button" @click="resetTags" class="btn clear-filter-btn">Clear filter</button>
     </div>
+    
     <ul class="blog-list">
       <li v-for="(item, index) in filteredList" class="blog-list__item">
         <BlogPostPreview
           v-show="index >= currentPage * pageSize && index < (currentPage + 1) * pageSize"
           :item="item"
         />
-        <ul class="blog-list__tags">
+        <!-- <ul class="blog-list__tags">
           <li v-for="tag in item.frontmatter.tags" class="blog-list__tag">
             <button @click="addTag(tag)">{{ tag }}</button>
           </li>
-        </ul>
+        </ul> -->
       </li>
     </ul>
 
@@ -146,6 +148,7 @@ export default {
 
 .blog-list__item {
   list-style-type: none;
+  margin-bottom: 50px;
 }
 
 .blog-list__tags {
