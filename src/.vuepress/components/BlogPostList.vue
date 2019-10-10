@@ -1,4 +1,6 @@
 <script>
+let scrollTo = require('vue-scrollto');
+
 export default {
   name: "BlogPostList",
   props: {
@@ -73,14 +75,21 @@ export default {
   },
 
   methods: {
+    scrollToTop() {
+      // window.scrollTo(0,0);
+      scrollTo.scrollTo('#app')
+    },
     nextPage() {
       this.currentPage =
         this.currentPage >= this.totalPages - 1
           ? this.totalPages - 1
           : this.currentPage + 1;
+
+      this.scrollToTop();
     },
     previousPage() {
       this.currentPage = this.currentPage < 0 ? 0 : this.currentPage - 1;
+      this.scrollToTop();
     },
     handleTagSelected (tag) {
       // console.log(tag.tag)
@@ -115,10 +124,12 @@ export default {
     
     <ul class="blog-list">
       <li v-for="(item, index) in filteredList" class="blog-list__item">
+        <transition name="fade" mode="out-in">
         <BlogPostPreview
           v-show="index >= currentPage * pageSize && index < (currentPage + 1) * pageSize"
           :item="item" @tagSelected="handleTagSelected"
         />
+        </transition>
       </li>
     </ul>
 

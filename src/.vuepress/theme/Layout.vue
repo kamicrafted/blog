@@ -14,18 +14,20 @@
       <slot name="sidebar-bottom" slot="bottom" />
     </Sidebar>
 
-    <Blog v-if="$page.frontmatter.blog" :sidebar-items="sidebarItems" />
+    <transition name="fade" mode="out-in">
+      <Blog key="blog" v-if="$page.frontmatter.blog" :sidebar-items="sidebarItems" />
 
-    <div class="custom-layout" v-else-if="$page.frontmatter.layout">
-      <component :is="$page.frontmatter.layout" />
-    </div>
+      <div key="custom" class="custom-layout" v-else-if="$page.frontmatter.layout">
+        <component :is="$page.frontmatter.layout" />
+      </div>
 
-    <Home v-else-if="$page.frontmatter.home" />
+      <Home key="home" v-else-if="$page.frontmatter.home" />
 
-    <Page v-else :sidebar-items="sidebarItems">
-      <slot name="page-top" slot="top" />
-      <slot name="page-bottom" slot="bottom" />
-    </Page>
+      <Page key="page" v-else :sidebar-items="sidebarItems">
+        <slot name="page-top" slot="top" />
+        <slot name="page-bottom" slot="bottom" />
+      </Page>
+    </transition>
 
     <SWUpdatePopup :updateEvent="swUpdateEvent" />
   </div>
