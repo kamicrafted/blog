@@ -82,6 +82,10 @@ export default {
     previousPage() {
       this.currentPage = this.currentPage < 0 ? 0 : this.currentPage - 1;
     },
+    handleTagSelected (tag) {
+      // console.log(tag.tag)
+      this.addTag(tag.tag)
+    },
     addTag(tag) {
       const tagExists = this.selectedTags.some(item => {
         return item === tag;
@@ -105,21 +109,16 @@ export default {
   <div>
     <!-- Show active filters -->
     <div v-if="selectedTags.length > 0" class="filtered-heading">
-      <h2>Filtered by {{ selectedTags.join(',') }}</h2>
-      <button type="button" @click="resetTags" class="btn clear-filter-btn">Clear filter</button>
+      <h2><span>Posts tagged as </span> {{ selectedTags.join(', ') }}</h2>
+      <button type="button" @click="resetTags" class="button button--clear">Clear filters</button>
     </div>
     
     <ul class="blog-list">
       <li v-for="(item, index) in filteredList" class="blog-list__item">
         <BlogPostPreview
           v-show="index >= currentPage * pageSize && index < (currentPage + 1) * pageSize"
-          :item="item"
+          :item="item" @tagSelected="handleTagSelected"
         />
-        <!-- <ul class="blog-list__tags">
-          <li v-for="tag in item.frontmatter.tags" class="blog-list__tag">
-            <button @click="addTag(tag)">{{ tag }}</button>
-          </li>
-        </ul> -->
       </li>
     </ul>
 
@@ -127,13 +126,13 @@ export default {
       <button
         v-show="currentPage > 0"
         @click="previousPage"
-        class="button--pagination"
+        class="button button--pagination"
         type="button"
       >Previous</button>
       <button
         v-show="currentPage < totalPages - 1"
         @click="nextPage"
-        class="button--pagination"
+        class="button button--pagination"
         type="button"
       >Next</button>
     </div>
@@ -141,42 +140,11 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@import '../theme/styles/app';
+
 .blog-list {
   padding: 0;
   margin: 0;
-}
-
-.blog-list__item {
-  list-style-type: none;
-  margin-bottom: 50px;
-}
-
-.blog-list__tags {
-  display: flex;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  margin-bottom: 15px;
-  list-style-type: none;
-}
-
-.button--pagination {
-  background-color: #32c8cf;
-  border-radius: 4px;
-  color: #fff;
-  font-size: 0.8rem;
-  padding: 0.5rem 0.75rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  box-shadow: 0 0;
-  transition: background-color 0.2s ease-in, color 0.2s ease-in;
-}
-
-.button--pagination:hover {
-  background-color: #fff;
-  border: 1px solid #32c8cf;
-  border-radius: 4px;
-  color: #32c8cf;
 }
 
 .clear-filter-btn {
@@ -186,6 +154,19 @@ export default {
 
 .filtered-heading {
   display: flex;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid lighten($color-bg, 10%);
+
+  h2 {
+    margin: 0 auto 0 0;
+    padding: 0;
+    border-bottom: 0;
+  }
+
+  span {
+    font-weight: normal;
+  }
 }
 
 .pagination {

@@ -8,7 +8,6 @@ blog: true
 tags:
   - HTML
   - CSS
-  - JavaScript
 ---
 
 ## Hello Dr. Zoidberg

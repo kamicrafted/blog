@@ -6,8 +6,6 @@ excerpt: Dr. Zoidberg, that doesn't make sense. But, okay! No! The kind with loo
 type: post
 blog: true
 tags:
-  - HTML
-  - CSS
   - JavaScript
 ---
 

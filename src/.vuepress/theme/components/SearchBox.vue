@@ -188,7 +188,7 @@ export default {
     list-style-type: none;
 
     &.align-right {
-      right: 0;
+      left: 0;
     }
   }
 

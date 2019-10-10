@@ -1,27 +1,12 @@
 <template>
-  <div class="home">
-    <div class="hero">
-      <img v-if="data.heroImage" :src="$withBase(data.heroImage)" alt="hero" />
+  <div class="content default">
+    <BlogPostList
+      :pages="$site.pages"
+      :page-size="$site.themeConfig.pageSize"
+      :start-page="$site.themeConfig.startPage"
+    />
 
-      <h1>{{ data.heroText || $title || 'Hello' }}</h1>
-
-      <p class="description">{{ data.tagline || $description || 'Welcome to your VuePress site' }}</p>
-
-      <p class="action" v-if="data.actionText && data.actionLink">
-        <NavLink class="action-button" :item="actionLink" />
-      </p>
-    </div>
-
-    <div class="features" v-if="data.features && data.features.length">
-      <div class="feature" v-for="(feature, index) in data.features" :key="index">
-        <h2>{{ feature.title }}</h2>
-        <p>{{ feature.details }}</p>
-      </div>
-    </div>
-
-    <Content custom />
-
-    <div class="footer" v-if="data.footer">{{ data.footer }}</div>
+    <!-- <div class="footer" v-if="data.footer">{{ data.footer }}</div> -->
   </div>
 </template>
 
@@ -51,5 +36,22 @@ export default {
 
 body {
   background: $color-bg;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 1400px;
+    background-image: radial-gradient(
+      circle at top center,
+      rgba(lighten($color-bg, 10%), .5),
+      darken($color-bg, 10%)
+    );
+    transform: translateX(-50%);
+  }
 }
 </style>

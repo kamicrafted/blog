@@ -237,6 +237,10 @@ function find(page, items, offset) {
   }
 }
 
+.post {
+  padding-top: 50px;
+}
+
 .publish-date {
   margin-bottom: 0.5rem;
 }

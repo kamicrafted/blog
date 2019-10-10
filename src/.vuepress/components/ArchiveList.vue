@@ -168,6 +168,7 @@ export default {
   &__group-year {
     position: relative;
     padding-left: 100px;
+    margin: 0 0 100px -50px;
     margin-bottom: 100px;
 
     &:last-child {
@@ -268,12 +269,14 @@ export default {
   font-weight: bold;
   font-size: 24px;
   margin: 0 0 16px 16px;
+  color: lighten($color-bg, 40%);
 }
 
 @media (max-width: $MQMobile) {
   .archive {
     &__group-year {
       padding-left: 0;
+      margin-left: 0;
 
       .archive-year {
         &:after {

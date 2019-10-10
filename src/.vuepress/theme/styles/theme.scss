@@ -13,6 +13,10 @@ body {
   color: $color-text;
 }
 
+button {
+  cursor: pointer;
+}
+
 .icon {
   width: 24px;
 
@@ -42,19 +46,34 @@ body {
   }
 
   &-list {
-    &__tag {
-      margin-right: 5px;
+    &__item {
+      list-style-type: none;
+      
+      .preview {
+        margin-bottom: 50px;
+        border-bottom: 1px solid darken($color-bg, 5%);
 
-      > button {
-        background-color: rgba(black, 0.3);
-        color: rgba(white, 0.75);
-        border: none;
-        padding: 3px 8px 4px;
-        border-radius: 4px;
-
-        &:hover {
-          background-color: rgba(black, 0.8);
+        &__tag {
+          margin-right: 5px;
+          cursor: pointer;
+    
+          > button {
+            background-color: rgba(black, 0.3);
+            color: rgba(white, 0.75);
+            border: none;
+            padding: 3px 8px 4px;
+            border-radius: 4px;
+            outline: none;
+    
+            &:hover {
+              background-color: rgba(black, 0.8);
+            }
+          }
         }
+      }
+    
+      &:last-child .preview {
+        border-bottom: none;
       }
     }
   }
@@ -83,7 +102,7 @@ body {
   background-color: lighten($color-bg, 5%);
   width: $sidebarWidth;
   position: fixed;
-  z-index: 10;
+  z-index: 100;
   margin: 0;
   top: $navbarHeight;
   left: 0;

@@ -13,6 +13,9 @@ export default {
     featherReplace: function () {
       feather.replace()
     },
+    clickedTag: function (tag) {
+      this.$emit('tagSelected', {tag: tag})
+    }
   },
   computed: {
     formatPublishDate() {
@@ -36,7 +39,7 @@ export default {
   <section class="preview">
     <div class="preview__header">
       <div class="preview__header-left">
-        <time>{{ formatPublishDate }}</time>
+        <time class="preview__timestamp">{{ formatPublishDate }}</time>
         <router-link class="link-title" :to="item.path">
           <h3 class="blog-post__title">{{ item.frontmatter.title }}</h3>
         </router-link>
@@ -60,6 +63,12 @@ export default {
     <p v-if="item.frontmatter.excerpt">{{ item.frontmatter.excerpt }}</p>
 
     <router-link class="button blog-post__button" :to="item.path">Read more</router-link>
+
+    <ul class="preview__tags">
+      <li v-for="tag in item.frontmatter.tags" class="preview__tag">
+        <button @click="clickedTag(tag)">{{ tag }}</button>
+      </li>
+    </ul>
   </section>
 </template>
 
@@ -67,6 +76,8 @@ export default {
 @import "../theme/styles/app";
 
 .preview {
+  padding-bottom: 30px;
+
   &__header {
     display: flex;
     justify-content: space-between;
@@ -77,6 +88,26 @@ export default {
     position: relative;
     bottom: 8px;
   }
+
+  &__timestamp {
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    opacity: .5;
+  }
+
+  &__tags {
+    display: flex;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 15px;
+    list-style-type: none;
+  }
+
+  &__tag {
+    cursor: pointer;
+  }
 }
 
 .blog-post__button {
@@ -86,20 +117,6 @@ export default {
 
 .blog-post__title {
   margin-top: 0.5rem;
-}
-
-.button {
-  border-radius: 4px;
-  font-size: 0.8rem;
-  padding: 0.5rem 0.75rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  box-shadow: 0 0;
-  transition: background-color 0.2s ease-in, color 0.2s ease-in;
-
-  &:hover {
-    text-decoration: none !important;
-  }
 }
 
 .tag-list {

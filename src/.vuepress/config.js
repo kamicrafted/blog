@@ -10,13 +10,13 @@ module.exports = {
     editLinkText: "Found a bug? Help me improve this page!",
     nav: [
       // { text: 'Home', link: '/' },
-      { text: "Posts", link: "/blog/" },
+      // { text: "Posts", link: "/blog/" },
       { text: "Archive", link: "/archive/" },
       { text: "RSS", link: "/rss.xml" }
     ],
     logo: "/logo-pixelsnbits.svg",
     docsDir: "src",
-    pageSize: 5,
+    pageSize: 2,
     startPage: 0
   },
   plugins: [

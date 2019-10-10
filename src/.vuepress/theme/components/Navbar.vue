@@ -94,7 +94,8 @@ $navbar-horizontal-padding: 1.5rem;
   justify-content: space-between;
   padding: $navbar-vertical-padding $navbar-horizontal-padding;
   line-height: $navbarHeight - 1.4rem;
-  position: relative;
+  position: fixed;
+  z-index: 500;
   background-image: linear-gradient(
     to bottom,
     darken($color-bg, 7),
