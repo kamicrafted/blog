@@ -17,14 +17,14 @@ module.exports = {
     ],
     logo: "/logo-pixelsnbits.svg",
     docsDir: "src",
-    pageSize: 2,
+    pageSize: 10,
     startPage: 0
   },
   plugins: [
     [
       "@vuepress/google-analytics",
       {
-        ga: "UA-179348-4" // UA-00000000-0
+        ga: "UA-149858693-2" // UA-00000000-0
       }
     ],
     [

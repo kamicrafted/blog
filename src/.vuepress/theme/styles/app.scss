@@ -38,11 +38,15 @@
   }
 
   &--pagination {
-    background-color: white;
-    color: $color-bg;
+    background-color: lighten($color-bg, 30%);
+    color: white;
+    min-width: 100px;
+    border: 1px solid darken($color-bg, 50%);
+    outline: none;
 
     &:hover {
-      background-color: darken(#fafafa, 15%);
+      background-color: lighten($color-bg, 70%);
+      color: $color-bg;
     }
   }
 
