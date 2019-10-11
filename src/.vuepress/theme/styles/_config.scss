@@ -3,7 +3,12 @@ $MQNarrow: 959px;
 $MQMobile: 719px;
 $MQMobileNarrow: 419px;
 
-$mobileSidebarWidth: calc($sidebarWidth * 0.82);
+// layout
+$navbarHeight: 3.6rem;
+$sidebarWidth: 20rem;
+$contentWidth: 750px;
+
+$mobileSidebarWidth: calc(20rem * 0.82);
 
 // colors
 $color-primary: #FF3E6C;
@@ -20,10 +25,7 @@ $borderColor: $border-color;
 $codeBgColor: #282c34;
 $arrowBgColor: #ccc;
 
-// layout
-$navbarHeight: 3.6rem;
-$sidebarWidth: 20rem;
-$contentWidth: 740px;
+
 
 // code
 $lineNumbersWrapperWidth: 3.5rem;
@@ -36,7 +38,7 @@ Wrapper
 .wrapper {
   max-width: $contentWidth;
   margin: 0 auto;
-  padding: 2rem 2.5rem;
+  padding: 3.5rem 2.5rem 2rem 2.5rem;
 
   @media (max-width: $MQNarrow) {
     padding: 2rem;

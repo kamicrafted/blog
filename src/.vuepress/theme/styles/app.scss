@@ -176,7 +176,8 @@ Arrow
 /* ========================================================
 Code
 ======================================================== */
-.content {
+.content,
+.content__default {
   code {
     color: lighten($textColor, 20%);
     padding: 0.25rem 0.5rem;
@@ -417,6 +418,11 @@ Custom Blocks
 /* ========================================================
 Mobile Styles
 ======================================================== */
+.no-sidebar {
+  .sidebar-button {
+    display: none;
+  }
+}
 // narrow desktop / iPad
 @media (max-width: $MQNarrow) {
   .sidebar {

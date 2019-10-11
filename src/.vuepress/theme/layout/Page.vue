@@ -168,6 +168,7 @@ function find(page, items, offset) {
 @import "../styles/_config.scss";
 
 .page {
+  @extend .wrapper;
   padding-bottom: 2rem;
 }
 
@@ -189,7 +190,7 @@ function find(page, items, offset) {
   }
 }
 
-@media (max-width: $MQMobile) {
+// @media (max-width: $MQMobile) {
   // .page-edit
   //   .edit-link
   //     margin-bottom .5rem
@@ -197,7 +198,7 @@ function find(page, items, offset) {
   //     font-size .8em
   //     float none
   //     text-align left
-}
+// }
 
 // .page-edit
 //   @extend $wrapper

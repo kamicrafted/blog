@@ -11,6 +11,7 @@ module.exports = {
     nav: [
       // { text: 'Home', link: '/' },
       // { text: "Posts", link: "/blog/" },
+      // { text: "Photos", link: "/photos/" },
       { text: "Archive", link: "/archive/" },
       { text: "RSS", link: "/rss.xml" }
     ],
@@ -49,9 +50,9 @@ module.exports = {
     ["link", { rel: "manifest", href: "/site.webmanifest" }],
     [
       "link",
-      { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#5bbad5" }
+      { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#FF3E6C" }
     ],
-    ["meta", { name: "msapplication-TileColor", content: "#da532c" }],
+    ["meta", { name: "msapplication-TileColor", content: "#FF3E6C" }],
     ["meta", { name: "theme-color", content: "#ffffff" }]
   ]
 };

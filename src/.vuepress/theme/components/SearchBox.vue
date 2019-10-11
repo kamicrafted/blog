@@ -152,26 +152,33 @@ export default {
 
 .search-box {
   display: inline-block;
-  position: relative;
+  position: absolute;
+  right: 30px;
   margin-right: 1rem;
 
   input {
     cursor: text;
-    width: 10rem;
+    width: 0;
     color: lighten($textColor, 25%);
     display: inline-block;
-    border: 1px solid black;
     border-radius: 2rem;
     font-size: 0.9rem;
     line-height: 2rem;
     padding: 0 0.5rem 0 2rem;
     outline: none;
     transition: all 0.2s ease;
-    background: $color-bg url(../assets/search.svg) 0.6rem 0.5rem no-repeat;
+    background: transparent;
+    background: url(../assets/search.svg) 0.6rem 0.5rem no-repeat;
     background-size: 1rem;
-    box-shadow: inset 0 2px 4px rgba(black, 0.3);
+    border: 1px solid transparent;
+    cursor: pointer;
 
     &:focus {
+      width: 10rem;
+      border: 1px solid black;
+      background: $color-bg url(../assets/search.svg) 0.6rem 0.5rem no-repeat;
+      background-size: 1rem;
+      box-shadow: inset 0 2px 4px rgba(black, 0.3);
       cursor: auto;
       border-color: $color-primary;
     }

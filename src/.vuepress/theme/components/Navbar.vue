@@ -84,13 +84,21 @@ function css(el, property) {
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/_config.scss";
+@import "../styles/config";
 
 $navbar-vertical-padding: 0.7rem;
 $navbar-horizontal-padding: 1.5rem;
 
+.home-link {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .navbar {
   display: flex;
+  width: 100%;
+  min-height: 60px;
   justify-content: space-between;
   padding: $navbar-vertical-padding $navbar-horizontal-padding;
   line-height: $navbarHeight - 1.4rem;
@@ -108,6 +116,12 @@ $navbar-horizontal-padding: 1.5rem;
   span,
   img {
     display: inline-block;
+  }
+
+  .sidebar-button {
+    position: absolute;
+    left: 30px;
+    top: 16px;
   }
 
   .logo {
@@ -129,6 +143,8 @@ $navbar-horizontal-padding: 1.5rem;
   }
 
   .links {
+    position:  absolute;
+    left: 30px;
     display: flex;
     padding-left: 1.5rem;
     box-sizing: border-box;
@@ -153,6 +169,10 @@ $navbar-horizontal-padding: 1.5rem;
 
     .can-hide {
       display: none;
+    }
+
+    .sidebar-button {
+      display: block;
     }
 
     .links {

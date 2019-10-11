@@ -165,6 +165,8 @@ export default {
 @import "../theme/styles/app.scss";
 
 .archive {
+  padding: 50px;
+
   &__group-year {
     position: relative;
     padding-left: 100px;

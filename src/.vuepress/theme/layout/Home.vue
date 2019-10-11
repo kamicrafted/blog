@@ -1,5 +1,5 @@
 <template>
-  <div class="content default">
+  <div class="content default asdfas">
     <BlogPostList
       :pages="$site.pages"
       :page-size="$site.themeConfig.pageSize"
