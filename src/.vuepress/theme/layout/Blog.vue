@@ -233,6 +233,7 @@ function find(page, items, offset) {
   }
 
   &__title {
+    font-weight: normal;
     margin-top: 0;
   }
 }

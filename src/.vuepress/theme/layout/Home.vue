@@ -6,7 +6,7 @@
       :start-page="$site.themeConfig.startPage"
     />
 
-    <!-- <div class="footer" v-if="data.footer">{{ data.footer }}</div> -->
+    <div class="footer" v-if="data.footer">{{ data.footer }}</div>
   </div>
 </template>
 
@@ -35,7 +35,6 @@ export default {
 @import "../styles/app";
 
 body {
-  background: $color-bg;
   position: relative;
 
   &:after {

@@ -188,29 +188,39 @@ export default {
     width: 20rem;
     position: absolute;
     top: 1.5rem;
+    padding: 0;
+    border-radius: 4px;
     background: darken($color-bg, 5%);
     border: 1px solid darken($color-bg, 10%);
-    border-radius: 6px;
-    padding: 0.4rem;
     list-style-type: none;
+    box-shadow: 0 10px 20px rgba(black, .25);
 
     &.align-right {
-      left: 0;
+      right: 0;
     }
   }
 
   .suggestion {
     line-height: 1.4;
     padding: 0.4rem 0.6rem;
-    border-radius: 4px;
     cursor: pointer;
+    border-bottom: 1px solid lighten($color-bg, 5%);
+
+    &:first-child {
+      border-radius: 4px 4px 0 0;
+    }
+
+    &:last-child {
+      border-radius: 0 0 4px 4px;
+      border-bottom: 0;
+    }
 
     a {
       white-space: normal;
       color: lighten($textColor, 35%);
 
       .page-title {
-        font-weight: 600;
+        font-weight: normal;
       }
 
       .header {

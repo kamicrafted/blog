@@ -116,6 +116,7 @@ export default {
 }
 
 .blog-post__title {
+  font-weight: normal;
   margin-top: 0.5rem;
 }
 

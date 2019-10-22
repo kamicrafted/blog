@@ -1,3 +1,6 @@
+
+@import url("https://use.typekit.net/tjq7dwb.css");
+
 // responsive breakpoints
 $MQNarrow: 959px;
 $MQMobile: 719px;
@@ -12,9 +15,13 @@ $mobileSidebarWidth: calc(20rem * 0.82);
 
 // colors
 $color-primary: #FF3E6C;
+$color-secondary: #a3b5de;
 $color-bg: #242637;
 $color-text: #e4e4ea;
 $border-color: lighten($color-bg, 10%);
+
+$font-headline: plantin, sans-serif;
+$font-body: freight-sans-pro, sans-serif;
 
 // ======================================
 

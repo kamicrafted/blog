@@ -2,9 +2,9 @@
 title: Home
 home: true
 heroText: Hero
-tagline: Some tagline
-actionText: Go To Github
-actionLink: https://github.com/bencodezen/vuepress-blog-boilerplate
+tagline: ""
+actionText: ""
+actionLink: ""
 features:
   - title: Feature 1
     details: Feature Details
@@ -12,5 +12,5 @@ features:
     details: Feature Details
   - title: Feature 3
     details: Feature Details
-footer: This is a footer
+footer: ""
 ---

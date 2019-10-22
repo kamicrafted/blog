@@ -268,10 +268,16 @@ export default {
 }
 
 .archive-month {
+  font-size: 16px;
   font-weight: bold;
-  font-size: 24px;
   margin: 0 0 16px 16px;
   color: lighten($color-bg, 40%);
+  font-family: $font-headline;
+  text-transform: uppercase;
+}
+
+.link-title {
+  font-family: $font-headline;
 }
 
 @media (max-width: $MQMobile) {
