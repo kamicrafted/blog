@@ -1,5 +1,5 @@
 ---
-heroImage: '/assets/img/191022-digitalocean.jpg'
+heroImage: '/images/191022-digitalocean.jpg'
 title: Digital Ocean Tips
 date: 2019-10-22 11:38:6
 excerpt: 
@@ -62,6 +62,39 @@ sudo nginx -t
 ```
 
 If all looks good, then we'll need to restart nginx using `sudo systemctl reload nginx`.
+
+### Step 3. Obtain a SSL certificate
+
+To get your domain certified for SSL, we'll start with this command:
+```
+sudo certbot --nginx -d yoursite.com -d www.yoursite.com
+```
+
+That command will run Certbot using the nginx plugin, specifying the names we're using to validate the certificate on. If you're running Certbot for the first time, it'll ask for your email and to agree to their terms of service. Once entered, Certbot will hit the Let's Encrypt server and ask how you'd like to configue your HTTPS settings.
+
+```
+Output
+Please choose whether or not to redirect HTTP traffic to HTTPS, removing HTTP access.
+-------------------------------------------------------------------------------
+1: No redirect - Make no further changes to the webserver configuration.
+2: Redirect - Make all requests redirect to secure HTTPS access. Choose this for
+new sites, or if you're confident your site works on HTTPS. You can undo this
+change by editing your web server's configuration.
+-------------------------------------------------------------------------------
+Select the appropriate number [1-2] then [enter] (press 'c' to cancel):
+```
+
+The options provided will be between automatic redirection to force HTTPS access vs keeping the current state without forced redirection.
+
+Once a selection has been made, the configuration will be updated and nginx will reload. At this point, you can reload your site using `https://` which should reflect that the site is now secure through a green lock icon. Additionally, you can use [SSL Lab Server Test](https://www.ssllabs.com/ssltest/) to test your server settings which should have an <strong>A</strong> grade.
+
+Next, we want to confirm Certbot will renew the default 90 day certification. The renewal process will ensure that your certificates will be automatically renewed for any certificate due to expire within 30 days. To test this process, do a dry run Certbot using:
+
+```
+sudo certbot renew --dry-run
+```
+
+If there are no errors reported, you can rest assure that your certificate will automatically be renewed and nginx will reload to reflect the changes. Any failures will be reported to the email address that was originally provided.
 
 ---
 
