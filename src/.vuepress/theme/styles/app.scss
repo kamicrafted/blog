@@ -97,6 +97,7 @@ Hero
   &__image {
     position: relative;
     width: 100%;
+    opacity: .6;
   }
 
   &__artwork {
@@ -107,9 +108,9 @@ Hero
   .blog__header {
     position: absolute;
     width: 100%;
-    max-width: $contentWidth;
+    max-width: 600px;
     z-index: 20;
-    bottom: 0;
+    bottom: -20px;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
@@ -117,15 +118,18 @@ Hero
 
     .blog__title {
       font-size: 2em;
+      font-weight: 00;
       margin-bottom: 0;
+      color: white;
     }
 
     .publish-date {
       margin: 0;
+      color: white;
     }
   }
 
-  &--fullwidth {
+  &--5fullwidth {
     .hero__image {
       width: 100%;
     }

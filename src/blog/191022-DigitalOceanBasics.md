@@ -1,8 +1,8 @@
 ---
 heroImage: '/images/191022-digitalocean.jpg'
-title: Digital Ocean Tips
+title: Setting up LEMP and HTTPS/SSL on Digital Ocean
 date: 2019-10-22 11:38:6
-excerpt: This post will cover how to set up a LEMP stack on Digital Ocean, allow encrypted HTTPS on your web server using Certbot and Let's Encrypt, as well as a handful of commonly used commands.
+excerpt: Learn how to set up a LEMP stack on Digital Ocean, allow encrypted HTTPS on your web server using Certbot and Let's Encrypt, as well as a handful of commonly used commands.
 type: post
 blog: true
 tags:

@@ -99,6 +99,8 @@ $navbar-horizontal-padding: 1.5rem;
   display: flex;
   width: 100%;
   min-height: 60px;
+  font-family: $font-headline;
+  font-weight: 900;
   justify-content: space-between;
   padding: $navbar-vertical-padding $navbar-horizontal-padding;
   line-height: $navbarHeight - 1.4rem;
