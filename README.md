@@ -1,3 +1,5 @@
+![Screenshot](https://github.com/kamicrafted/blog/blob/master/public/_screenshot.jpg?raw=true)
+
 # VuePress powered Blog
 [Vuepress Blog Boilerplate](https://github.com/bencodezen/vuepress-blog-boilerplate)
 
