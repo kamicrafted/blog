@@ -54,6 +54,7 @@ export default {
     </div>
 
     <div v-if="item.frontmatter.heroImage" class="hero hero--preview">
+      <span class="hero__label">Read post <i class="icon icon-arrow-right" data-feather="arrow-right-circle"></i></span>
       <div class="hero__scrim"></div>
       <router-link class="hero__image" :to="item.path">
         <img :src="item.frontmatter.heroImage" class="hero__artwork" alt />
@@ -62,7 +63,9 @@ export default {
 
     <p v-if="item.frontmatter.excerpt">{{ item.frontmatter.excerpt }}</p>
 
-    <router-link v-if="item.frontmatter.excerpt" class="button blog-post__button" :to="item.path">Read post</router-link>
+    <router-link v-if="item.frontmatter.excerpt" class="button blog-post__button" :to="item.path">
+      Read post
+    </router-link>
 
     <ul class="preview__tags">
       <li v-for="tag in item.frontmatter.tags" class="preview__tag">

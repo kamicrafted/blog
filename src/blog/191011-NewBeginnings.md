@@ -1,24 +1,23 @@
 ---
-heroImage: ''
+heroImage: '/images/191011-newbeginnings.jpg'
 title: A fresh start
 date: 2019-10-11 14:47:18
-excerpt: 
+excerpt: The list of new tools, libraries, and frameworks that I've been curious to dabble in has been growing, and ended up being the motivation for me to finally take steps to get this blog back up and running.
 type: post
 blog: true
 tags:
   - General
 ---
 
-<!-- It's been awhile since I've last kept up with publishing my musings on the web, and even though it's been on the back of my mind to give it another go, finding the time to get something off the ground has been elusive.
+Being a father of three young children, free time continues to be the most precious and elusive resource in my daily life – which I'm in constant struggle to find. Rather than expecting a magical chunk of responsibility-free time to appear, I've decided to take the approach of utilizing the in-between moments that I'd normally burn away reading an article or watching an episode of whatever catches my attention.
 
-There's been a ton of new tools and frameworks that I've been curious to dabble in, which ended up being the motivation for me to finally buckle down and get this blog up and running.
+Working on various curiosity projects in this manner definitely has its downsides as it results in frequent context switching and reorienting myself each time I start back up, which is never fun. That being said, I've been able to slowly chip away at this blog while learning VuePress –  so the effort seems to have paid off to some degree. The list of new tools, libraries, and frameworks that I've been curious to dabble in has been growing, and ended up being the motivation for me to finally take steps to get this blog back up and running.
 
-A few of the things that I've been excited to try and figure out are:
+A few of the areas that I've been excited to try and figure out are:
 
-- Using Vuepress for creating pre-rendered, static SPA
-- Learn React & Framer X
-- Digging deeper into Vue, Vue Router and VueX
-- Getting better with Craft CMS + Commerce
+<span class="md-icon">![icon-check-square](/images/icons/check-square.svg)</span> Using Vuepress for creating pre-rendered, static SPA (this blog!)<br>
+<span class="md-icon">![icon-check](/images/icons/square.svg)</span> Digging deeper into Vue, Vue Router and VueX<br>
+<span class="md-icon">![icon-check](/images/icons/square.svg)</span> Getting better with Craft CMS + Commerce<br>
+<span class="md-icon">![icon-check](/images/icons/square.svg)</span> Learn React & Framer X<br>
 
-Writing out what I'm learning has proved to be an effective way to commit concepts to memory while having a place to reference down the line, as well as easily share my findings with others walking a similar path of discovery. -->
-
+Blogging what I learn has been an effective way for me to commit new concepts to memory while doubling up as a repository to reference when I have trouble recalling things (which seems to be increasing in frequency &#128557;). Hopefully what gets logged here will also be a resource for a curious wanderer that happpens to be stumbling through the same topics I'm exploring.

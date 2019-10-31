@@ -6,8 +6,8 @@ excerpt: Learn how to set up a LEMP stack on Digital Ocean, allow encrypted HTTP
 type: post
 blog: true
 tags:
-  - Dev
   - DigitalOcean
+  - Dev
 ---
 
 ## Setting up SSL Certificates using Let's Encrypt & Certbot

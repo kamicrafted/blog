@@ -7,6 +7,7 @@ type: post
 blog: true
 tags:
   - General
+  - Mechanical Keyboards
 ---
 
 ## Installing mdloader

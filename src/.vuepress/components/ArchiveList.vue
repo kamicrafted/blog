@@ -211,7 +211,7 @@ export default {
     &:before {
       content: '';
       position: absolute;
-      top: 11px;
+      top: 6px;
       left: -3px;
       width: 8px;
       height: 8px;
@@ -232,6 +232,7 @@ export default {
   }
 
   &__date {
+    flex: 0 0 auto;
     font-weight: bold;
     font-size: .75em;
     text-transform: uppercase;
@@ -282,6 +283,15 @@ export default {
 
 @media (max-width: $MQMobile) {
   .archive {
+    &-list__header {
+      align-items: flex-start;
+    }
+
+    &-list__date {
+      position: relative;
+      top: 9px;
+    }
+
     &__group-year {
       padding-left: 0;
       margin-left: 0;
