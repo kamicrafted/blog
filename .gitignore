@@ -5,4 +5,4 @@ vendor/
 node_modules/
 config/
 .vscode
-./public/
+public/
