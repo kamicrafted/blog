@@ -142,14 +142,18 @@ export default {
   @import 'styles/app';
 
   html, body,
-  #app, .theme-container,
+  #app, .view-error,
   .content {
     height: 100%;
   }
 
-  .content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .view-error {
+    .content {
+      display: flex;
+      position: relative;
+      top: -30px;
+      justify-content: center;
+      align-items: center;
+    }
   }
 </style>

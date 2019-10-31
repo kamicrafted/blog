@@ -62,7 +62,7 @@ export default {
 
     <p v-if="item.frontmatter.excerpt">{{ item.frontmatter.excerpt }}</p>
 
-    <router-link class="button blog-post__button" :to="item.path">Read more</router-link>
+    <router-link v-if="item.frontmatter.excerpt" class="button blog-post__button" :to="item.path">Read post</router-link>
 
     <ul class="preview__tags">
       <li v-for="tag in item.frontmatter.tags" class="preview__tag">
@@ -113,6 +113,15 @@ export default {
 .blog-post__button {
   margin-bottom: 1.5rem;
   display: inline-block;
+  border: 1px solid rgba(white, .3);
+  background: transparent;
+  color: rgba(white, .8);
+
+  &:hover {
+    border: 1px solid transparent;
+    background: $color-primary;
+    color: white;
+  }
 }
 
 .blog-post__title {

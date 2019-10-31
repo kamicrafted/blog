@@ -23,6 +23,8 @@
 
       <Home key="home" v-else-if="$page.frontmatter.home" />
 
+      <Photos key="photos" v-else-if="$page.frontmatter.photos" />
+
       <Page key="page" v-else :sidebar-items="sidebarItems">
         <slot name="page-top" slot="top" />
         <slot name="page-bottom" slot="bottom" />
@@ -40,6 +42,7 @@ import Vue from "vue";
 import nprogress from "nprogress";
 import Blog from "./layout/Blog.vue";
 import Home from "./layout/Home.vue";
+import Photos from "./layout/Photos.vue";
 import Page from "./layout/Page.vue";
 import Navbar from "./components/Navbar.vue";
 import Sidebar from "./components/Sidebar.vue";
@@ -51,11 +54,12 @@ export default {
   components: {
     Blog,
     Home,
+    Photos,
     Page,
     Sidebar,
     Navbar,
     Footer,
-    SWUpdatePopup
+    SWUpdatePopup,
   },
 
   data() {

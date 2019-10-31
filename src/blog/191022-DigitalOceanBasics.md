@@ -33,7 +33,7 @@ You'll also need a fully registered domain name to certify, as well as having an
 ### Step 1. Set up Certbot
 
 Let's first add the repo, update the package list and install Certbot with: 
-```
+``` bash
 sudo add-apt-repository ppa:certbot/certbot
 sudo apt-get update
 sudo apt-get install python-certbot-nginx
@@ -45,7 +45,7 @@ Once installed, we're ready to move on to the next step of certifying your domai
 
 We'll first need to see how your server name is configured by opening up the config file:
 
-```
+``` bash
 sudo nano /etc/nginx/sites-available/yoursite.com
 ```
 
@@ -57,7 +57,7 @@ server_name yoursite.com www.yoursite.com;
 
 Save any changes you've made and exit out of the editor. Before we move onto the next step, we should check the syntax of our updated configuration file to make sure all is still under working order.
 
-```
+``` bash
 sudo nginx -t
 ```
 
@@ -66,13 +66,13 @@ If all looks good, then we'll need to restart nginx using `sudo systemctl reload
 ### Step 3. Obtain a SSL certificate
 
 To get your domain certified for SSL, we'll start with this command:
-```
+``` bash
 sudo certbot --nginx -d yoursite.com -d www.yoursite.com
 ```
 
 That command will run Certbot using the nginx plugin, specifying the names we're using to validate the certificate on. If you're running Certbot for the first time, it'll ask for your email and to agree to their terms of service. Once entered, Certbot will hit the Let's Encrypt server and ask how you'd like to configue your HTTPS settings.
 
-```
+``` 
 Output
 Please choose whether or not to redirect HTTP traffic to HTTPS, removing HTTP access.
 -------------------------------------------------------------------------------
@@ -90,7 +90,7 @@ Once a selection has been made, the configuration will be updated and nginx will
 
 Next, we want to confirm Certbot will renew the default 90 day certification. The renewal process will ensure that your certificates will be automatically renewed for any certificate due to expire within 30 days. To test this process, do a dry run Certbot using:
 
-```
+``` bash
 sudo certbot renew --dry-run
 ```
 
@@ -101,22 +101,22 @@ If there are no errors reported, you can rest assure that your certificate will 
 ## Frequently Used Commands
 
 **Find the location of your php.ini file**
-```
+``` bash
 php -i | grep php.ini
 ```
 
 **Restart php**
-```
+``` bash
 systemctl restart php7.2-fpm.service
 ``` 
 
 **Restart a droplet from command line**
-```
+``` bash
 sudo shutdown -r now
 ```
 
 **Reset permissions**
-```
+``` bash
 chown -R www-data:www-data [folder]/
 chmod -R 744
 ``` 
