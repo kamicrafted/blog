@@ -95,8 +95,9 @@ export default {
   }
 
   &__timestamp {
+    font-family: serenity;
+    font-weight: 500;
     font-size: 14px;
-    font-weight: 600;
     text-transform: uppercase;
     opacity: .5;
   }

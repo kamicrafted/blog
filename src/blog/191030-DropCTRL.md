@@ -25,7 +25,7 @@ chmod u+x mdloader_mac
 
 ## Using the Drop QMK Configurator
 
-Next, we'll need to go to the web [Configurator](https://drop.com/mechanical-keyboards/configurator/preset/ctrl--default) and select Default CTRL toi get started.
+Next, we'll need to go to the web [Configurator](https://drop.com/mechanical-keyboards/configurator/preset/ctrl--default) and select Default CTRL to get started.
 
 
 <zoom-image

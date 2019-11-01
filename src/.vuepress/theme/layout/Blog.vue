@@ -17,7 +17,7 @@
       </div>
     </div>
 
-    <div class="blog">
+    <div :class="($frontmatter.type === 'gallery') ? 'blog' : ['blog', 'gallery']">
       <div v-if="!$frontmatter.heroImage" class="blog__header">
         <p class="publish-date">
           <time :datetime="$frontmatter.date">{{ publishDate }}</time>
@@ -294,6 +294,10 @@ function find(page, items, offset) {
   .next {
     float: right;
   }
+}
+
+.gallery {
+  max-width: $galleryWidth;
 }
 
 @media (max-width: $MQMobile) {

@@ -47,17 +47,19 @@ export default {
 
           setTimeout(() => {
             this.cloned.style.opacity = 1
+            this.imgRef.style.transform = "scale(1)"
           }, 0)
         } else {
           // unzoom image
           this.cloned.style.opacity = 0
+          this.imgRef.style.transform = "scale(.5)"
 
           setTimeout(() => {
             this.cloned.remove()
             this.cloned = null
 
             document.body.style.overflow = 'auto'
-          }, 250)
+          }, 300)
         }
       })
     }
@@ -89,17 +91,16 @@ body > .zoomed {
 }
 
 .zoom-clone {
-  position: relative;
-  transition: opacity 0;
+  position: fixed;
+  transition: all .3s $easeInOutQuad;
+  opacity: 0;
   cursor: zoom-in;
 
   > img {
-    opacity: 0;
     border-radius: 4px;
-    transform: scale(0);
-    transition: all 15s ease-out;
-    transition-delay: 1s;
     box-shadow: 0 60px 80px -20px rgba(black, 1);
+    transition: all .3s $easeInOutQuad;
+    transform: scale(.5);
   }
 
   &.zoomed {
@@ -122,13 +123,7 @@ body > .zoomed {
       max-height: 100%;
       object-fit: contain;
       margin: 0 auto;
-      transform: scale(1);
-      opacity: 1;
       cursor: zoom-out;
-    }
-
-    > .close-button {
-      display: block;
     }
   }
 

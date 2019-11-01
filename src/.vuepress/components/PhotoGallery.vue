@@ -36,6 +36,11 @@ export default {
     featherReplace: function () {
       feather.replace()
     },
+
+    buildGallery () {
+      let photoArray = document.body.querySelectorAll('.zoom')
+      console.log(photoArray)
+    }
   },
 
   components: {
@@ -44,6 +49,7 @@ export default {
   
   mounted () {
     this.featherReplace()
+    this.buildGallery ()
   }
 }
 </script>
