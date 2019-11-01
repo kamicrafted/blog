@@ -20,4 +20,4 @@ A few of the areas that I've been excited to try and figure out are:
 <span class="md-icon">![icon-check](/images/icons/square.svg)</span> Getting better with Craft CMS + Commerce<br>
 <span class="md-icon">![icon-check](/images/icons/square.svg)</span> Learn React & Framer X<br>
 
-Blogging what I learn has been an effective way for me to commit new concepts to memory while doubling up as a repository to reference when I have trouble recalling things (which seems to be increasing in frequency &#128557;). Hopefully what gets logged here will also be a resource for a curious wanderer that happpens to be stumbling through the same topics I'm exploring.
+Blogging what I learn has been helpful in committing new concepts to memory while doubling up as a repository to reference when I have trouble recalling things (which seems to be increasing in frequency &#128557;). Hopefully what gets logged here will also be a resource for a curious wanderer that happpens to be stumbling through the same topics I'm exploring.

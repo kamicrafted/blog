@@ -205,6 +205,7 @@ export default {
     padding: 0.4rem 0.6rem;
     cursor: pointer;
     border-bottom: 1px solid lighten($color-bg, 5%);
+    transition: all .15s $easeInOutQuad;
 
     &:first-child {
       border-radius: 4px 4px 0 0;
@@ -215,9 +216,14 @@ export default {
       border-bottom: 0;
     }
 
+    &:only-child {
+      border-radius: 4px;
+      border-bottom: 0;
+    }
+
     a {
       white-space: normal;
-      color: lighten($textColor, 35%);
+      color: $color-text;
 
       .page-title {
         font-weight: normal;
@@ -230,10 +236,10 @@ export default {
     }
 
     &.focused {
-      background-color: #f3f4f5;
+      background-color: lighten($color-bg, 5%);
 
       a {
-        color: $accentColor;
+        color: white;
       }
     }
   }

@@ -1,8 +1,8 @@
 <template>
   <footer class="footer">
     <div class="footer__inner">
-      <div class="signoff">&copy; {{ currentYear }} Kamicrafted. All rights reserved.</div>
-      <div class="social">
+      <div class="footer__signoff">&copy; {{ currentYear }} Kamicrafted. All rights reserved.</div>
+      <div class="footer__social">
         <a href="http://kamicrafted.com/"><i class="icon icon-globe" data-feather="globe"></i></a>
         <a href="https://github.com/kamicrafted/"><i class="icon icon-github" data-feather="github"></i></a>
         <a href="https://instagram.com/kamicrafted"><i class="icon icon-instagram" data-feather="instagram"></i></a>
@@ -35,20 +35,18 @@ export default {
 <style lang="scss" scoped>
 @import '../styles/app';
 
-footer {
+.footer {
   background-color: darken($color-bg, 10%);
 
-  .signoff {
+  &__signoff {
     font-size: 16px;
     color: lighten($color-bg, 40%);
   }
 
-  .social {
+  &__social {
     position: relative;
   }
-}
 
-.footer {
   &__inner {
     display: flex;
     align-items: center;
@@ -67,6 +65,18 @@ footer {
       &:hover {
         color: $color-primary;
       }
+    }
+  }
+}
+
+@media (max-width: $MQMobileNarrow) {
+  .footer {
+    &__inner {
+      flex-direction: column;
+    }
+
+    &__signoff {
+      margin-bottom: 25px;
     }
   }
 }

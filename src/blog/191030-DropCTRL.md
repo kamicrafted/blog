@@ -8,6 +8,7 @@ blog: true
 tags:
   - General
   - Mechanical Keyboards
+
 ---
 
 ## Installing mdloader
@@ -26,10 +27,22 @@ chmod u+x mdloader_mac
 
 Next, we'll need to go to the web [Configurator](https://drop.com/mechanical-keyboards/configurator/preset/ctrl--default) and select Default CTRL toi get started.
 
-![Configurator screenshot](/images/191030-configurator.jpg)
+
+<zoom-image
+  class="zoom"
+  src="/images/191030-configurator.jpg"
+  alt="Configurator Screenshot"
+  title="Configurator Screenshot"
+/>
+
 Using the Configurator, we can start modifying the keyboard configuration to suit our preferences. Once changes have been made, click the "Compile & Download" button. This will build and download a bin file. Move this file over to the folder containing `mdloader_mac` that we created before.
 
-![Configurator screenshot](/images/191030-configurator2.jpg)
+<zoom-image
+  class="zoom"
+  src="/images/191030-configurator2.jpg"
+  alt="Configurator Screenshot"
+  title="Configurator Screenshot"
+/>
 
 ## Flashing the CTRL keyboard
 

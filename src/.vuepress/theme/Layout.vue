@@ -46,6 +46,7 @@ import Photos from "./layout/Photos.vue";
 import Page from "./layout/Page.vue";
 import Navbar from "./components/Navbar.vue";
 import Sidebar from "./components/Sidebar.vue";
+import PhotoGallery from "./components/PhotoGallery.vue";
 import SWUpdatePopup from "./components/SWUpdatePopup.vue";
 import { resolveSidebarItems } from "./util";
 import Footer from "./components/Footer";
@@ -58,6 +59,7 @@ export default {
     Page,
     Sidebar,
     Navbar,
+    PhotoGallery,
     Footer,
     SWUpdatePopup,
   },

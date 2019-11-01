@@ -39,7 +39,6 @@ export default {
   <section class="preview">
     <div class="preview__header">
       <div class="preview__header-left">
-        <time class="preview__timestamp">{{ formatPublishDate }}</time>
         <router-link class="link-title" :to="item.path">
           <h3 class="blog-post__title">{{ item.frontmatter.title }}</h3>
         </router-link>
@@ -67,11 +66,14 @@ export default {
       Read post
     </router-link>
 
-    <ul class="preview__tags">
-      <li v-for="tag in item.frontmatter.tags" class="preview__tag">
-        <button @click="clickedTag(tag)">{{ tag }}</button>
-      </li>
-    </ul>
+    <div class="preview__tags">
+      <div class="preview__tags-wrapper">
+        <div v-for="tag in item.frontmatter.tags" class="preview__tag">
+          <button @click="clickedTag(tag)">{{ tag }}</button>
+        </div>
+      </div>
+      <time class="preview__timestamp">{{ formatPublishDate }}</time>
+    </div>
   </section>
 </template>
 
@@ -93,19 +95,25 @@ export default {
   }
 
   &__timestamp {
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: 600;
     text-transform: uppercase;
     opacity: .5;
   }
 
   &__tags {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
     padding: 0;
     margin: 0;
     margin-bottom: 15px;
     list-style-type: none;
+  }
+
+  &__tags-wrapper {
+    display: flex;
   }
 
   &__tag {

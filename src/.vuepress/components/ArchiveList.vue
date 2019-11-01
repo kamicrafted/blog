@@ -256,6 +256,12 @@ export default {
     }
   }
 
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
   &__excerpt {
     margin-top: 0;
     opacity: .8;
