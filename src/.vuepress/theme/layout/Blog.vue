@@ -5,19 +5,26 @@
       <div class="hero__image">
         <img :src="$frontmatter.heroImage" class="hero__artwork" alt />
       </div>
-      <div class="blog__header">
+      <div class="blog__header" :class="($frontmatter.type === 'gallery') ? 'blog__header--gallery' : 'blog__header'">
         <p class="publish-date">
           <time :datetime="$frontmatter.date">{{ publishDate }}</time>
         </p>
+
         <h1 class="blog__title">{{ $page.title }}</h1>
-        <p class="read-time" v-if="$page.readingTime">
+
+        <p class="read-time" v-if="$page.readingTime && $frontmatter.type != 'gallery'">
           <i class="icon icon-watch" data-feather="watch"></i>
           {{ $page.readingTime.text }}
+        </p>
+
+        <p class="read-time" v-else>
+          <i class="icon icon-camera" data-feather="camera"></i>
+          <span>Photo story</span>
         </p>
       </div>
     </div>
 
-    <div :class="($frontmatter.type === 'gallery') ? 'blog' : ['blog', 'gallery']">
+    <div :class="($frontmatter.type === 'gallery') ? ['blog', 'gallery'] : 'blog'">
       <div v-if="!$frontmatter.heroImage" class="blog__header">
         <p class="publish-date">
           <time :datetime="$frontmatter.date">{{ publishDate }}</time>

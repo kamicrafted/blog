@@ -2,7 +2,7 @@
 heroImage: '/images/191030-ctrl.jpg'
 title: Configuring the Massdrop CTRL Keyboard
 date: 2019-10-30 14:49:42
-excerpt: Learn how to customize and configure a CTRL keyboard
+excerpt: Customize and configure a CTRL keyboard using Drop's web Configurator
 type: post
 blog: true
 tags:

@@ -56,10 +56,22 @@ button {
     width: 16px;
     opacity: 0.5;
   }
+
+  &-camera {
+    opacity: 0.5;
+  }
 }
 
 .read-time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 0.85em;
+
+  .icon {
+    margin-right: 5px;
+    top: 2px;
+  }
 }
 
 .callout {
