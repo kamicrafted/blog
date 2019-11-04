@@ -75,3 +75,12 @@ Closing port... Success!
 ```
 
 One last thing I like to do is to take screenshots of the keymap from the web Configurator to have something to reference in case I forget the customized mapping.
+
+---
+
+<CurrentlyReading 
+  title="Tramp for the Lord"
+  author="Corrie ten Boom"
+  cover="https://images-na.ssl-images-amazon.com/images/I/41Fn46d1yCL.jpg"
+  excerpt="Armed with the gift of their faith and their belief in doing what was right, this devoutly Christian family provided sanctuary for persecuted Jews. Before long, the Nazis captured Corrie and her family and sent them to a concentration camp, where Corrie lost both her sister and father."
+/>

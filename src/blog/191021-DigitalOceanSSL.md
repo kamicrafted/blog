@@ -121,3 +121,11 @@ chown -R www-data:www-data folder_name/
 chmod -R 744
 ``` 
 
+<hr>
+
+<CurrentlyReading 
+  title="Nonviolent Communication"
+  author="Marshall Rosenberg"
+  cover="https://images-na.ssl-images-amazon.com/images/I/51MhjeI1bcL._SX332_BO1,204,203,200_.jpg"
+  excerpt="A communication and conflict-resolution process developed by the psychologist Marshall Rosenberg. The book focuses on how to express ourselves in a way that inspires empathy in others, and how to listen to them empathically in turn."
+/>
