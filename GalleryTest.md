@@ -44,7 +44,7 @@ photoset:
 <PhotoGallery :gallery="$page.frontmatter.photoset" /> 
 
 ## Single Photo Test
-<zoom-image
+<ZoomImage
   class="zoom"
   src="/images/191030-configurator.jpg"
   alt="Configurator Screenshot"

@@ -1,5 +1,5 @@
 ---
-heroImage: '/images/191011-newbeginnings.jpg'
+heroImage: '/images/hero/191011-newbeginnings.jpg'
 title: A fresh start
 date: 2019-10-11 14:47:18
 excerpt: The list of new tools, libraries, and frameworks that I've been curious to dabble in has been growing, and ended up being the motivation for me to finally take steps to get this blog back up and running.
@@ -22,7 +22,7 @@ A few of the areas that I've been excited to try and figure out are:
 
 Blogging what I learn has been helpful in committing new concepts to memory while doubling up as a repository to reference when I have trouble recalling things (which seems to be increasing in frequency &#128557;). Hopefully what gets logged here will also be a resource for a curious wanderer that happpens to be stumbling through the same topics I'm exploring.
 
-<hr>
+---
 
 <CurrentlyReading 
   title="Nonviolent Communication"

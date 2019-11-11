@@ -1,6 +1,10 @@
 <template>
   <div :class="{ zoomed }" @click="zoomed = true">
     <img class="img" v-bind="$attrs">
+    <p v-if="title" class="caption">
+      <i class="icon icon-caption" data-feather="message-square"></i>
+      {{ title }}
+    </p>
   </div>
 </template>
 
@@ -16,6 +20,8 @@ export default {
     }
   },
 
+  props: ["title"],
+
   methods: {
     featherReplace: function () {
       feather.replace()
@@ -23,6 +29,13 @@ export default {
 
     closeImage () {
       this.zoomed = false;
+    },
+
+    keyCatch (e) {
+      if (e.key == "Escape") {
+        this.closeImage();
+        console.log('esc key pressed');
+      }
     }
   },
 
@@ -39,6 +52,7 @@ export default {
           this.imgRef = this.cloned.querySelector('.img')
 
           this.imgRef.addEventListener('click', this.closeImage)
+          this.cloned.addEventListener('click', this.closeImage)
 
           // attach clone to DOM
           document.body.appendChild(this.cloned)
@@ -66,7 +80,13 @@ export default {
   },
 
   mounted () {
-    this.featherReplace()
+    let self = this;
+
+    this.featherReplace();
+    
+    window.addEventListener('keyup', function(e) {
+        self.keyCatch(e); // declared in your component methods
+    });
   }
   
 }
@@ -87,6 +107,22 @@ body > .zoomed {
   > img {
     transition: all .15s ease-out;
     display: block;
+  }
+}
+
+.caption {
+  display: flex;
+  padding: 6px 10px;
+  margin: 0 0 30px 0;
+  align-items: center;
+  background-color: rgba(darken($color-bg, 10%), .5);
+  border-radius: 0 0 4px 4px;
+  font-size: 14px;
+
+  .icon {
+    width: 16px;
+    margin-right: 5px;
+    opacity: .5;
   }
 }
 

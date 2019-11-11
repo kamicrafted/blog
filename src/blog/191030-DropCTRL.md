@@ -1,5 +1,5 @@
 ---
-heroImage: '/images/191030-ctrl.jpg'
+heroImage: '/images/hero/191030-ctrl.jpg'
 title: Configuring the Massdrop CTRL Keyboard
 date: 2019-10-30 14:49:42
 excerpt: Customize and configure a CTRL keyboard using Drop's web Configurator
@@ -8,7 +8,6 @@ blog: true
 tags:
   - General
   - Mechanical Keyboards
-
 ---
 
 ## Installing mdloader
@@ -28,7 +27,7 @@ chmod u+x mdloader_mac
 Next, we'll need to go to the web [Configurator](https://drop.com/mechanical-keyboards/configurator/preset/ctrl--default) and select Default CTRL to get started.
 
 
-<zoom-image
+<ZoomImage
   class="zoom"
   src="/images/191030-configurator.jpg"
   alt="Configurator Screenshot"
@@ -37,7 +36,7 @@ Next, we'll need to go to the web [Configurator](https://drop.com/mechanical-key
 
 Using the Configurator, we can start modifying the keyboard configuration to suit our preferences. Once changes have been made, click the "Compile & Download" button. This will build and download a bin file. Move this file over to the folder containing `mdloader_mac` that we created before.
 
-<zoom-image
+<ZoomImage
   class="zoom"
   src="/images/191030-configurator2.jpg"
   alt="Configurator Screenshot"
