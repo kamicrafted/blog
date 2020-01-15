@@ -11,9 +11,10 @@ module.exports = {
     nav: [
       // { text: 'Home', link: '/' },
       // { text: "Posts", link: "/blog/" },
-      // { text: "Photos", link: "/photos/" },
       { text: "Archive", link: "/archive/" },
-      { text: "RSS", link: "/rss.xml" }
+      { text: "Bookshelf", link: "/bookshelf/" },
+      // { text: "Photos", link: "/photos/" },
+      // { text: "RSS", link: "/rss.xml" }
     ],
     logo: "/logo-pixelsnbits.svg",
     docsDir: "src",

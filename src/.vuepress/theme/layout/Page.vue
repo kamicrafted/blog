@@ -170,6 +170,11 @@ function find(page, items, offset) {
 .page {
   @extend .wrapper;
   padding-bottom: 2rem;
+
+  &--wide {
+    max-width: $customWidth;
+    padding: 0;
+  }
 }
 
 .page-nav {

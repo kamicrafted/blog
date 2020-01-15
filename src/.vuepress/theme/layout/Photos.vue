@@ -1,56 +1,33 @@
-<template>
-  <div class="content default">
-    <BlogPostList
-      :pages="$site.pages"
-      :page-size="$site.themeConfig.pageSize"
-      :start-page="$site.themeConfig.startPage"
-    />
-
-    <div class="footer" v-if="data.footer">{{ data.footer }}</div>
-  </div>
-</template>
-
 <script>
-import NavLink from "../components/NavLink.vue";
+import feather from 'feather-icons';
 
 export default {
-  components: { NavLink },
-
-  computed: {
-    data() {
-      return this.$page.frontmatter;
-    },
-
-    actionLink() {
-      return {
-        link: this.data.actionLink,
-        text: this.data.actionText
-      };
+  name: "Photos",
+  data() {
+    return {
+      
+    };
+  },
+  methods: {
+    featherReplace: function () {
+      feather.replace()
     }
+  },
+  mounted () {
+    this.featherReplace()
   }
 };
 </script>
 
-<style lang="scss">
-@import "../styles/app";
+<template>
+  <div class="page page--wide">
+  <div class="photos">
+    Photos
+  </div>
+  </div>
+</template>
 
-body {
-  position: relative;
+<style lang="scss" scoped>
+@import "../styles/app.scss";
 
-  &:after {
-    content: '';
-    position: fixed;
-    z-index: -1;
-    top: 0;
-    left: 50%;
-    width: 100%;
-    height: 1400px;
-    background-image: radial-gradient(
-      circle at top center,
-      rgba(lighten($color-bg, 10%), .5),
-      darken($color-bg, 10%)
-    );
-    transform: translateX(-50%);
-  }
-}
 </style>

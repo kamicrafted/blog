@@ -70,7 +70,7 @@
 }
 
 .zoom-clone.zoomed .img {
-  max-width: $galleryWidth;
+  max-width: $customWidth;
 }
 
 /* ========================================================
@@ -133,7 +133,7 @@ Hero
   &__image {
     position: relative;
     width: 100%;
-    opacity: .6;
+    opacity: .8;
   }
 
   &__artwork {
@@ -154,7 +154,7 @@ Hero
 
     .blog__title {
       font-size: 2em;
-      font-weight: 00;
+      font-weight: 500;
       margin-bottom: 0;
       color: white;
     }
@@ -467,6 +467,31 @@ Custom Blocks
   }
 }
 /* END Custom Blocks ============================================ */
+
+/* ========================================================
+Bookshelf
+======================================================== */
+.shelf {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.page--bookshelf {
+  padding: 0 3rem !important;
+
+  h2 {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    font-weight: 500;
+    font-size: .85rem;
+
+    &:first-child {
+      padding-top: 50px;
+    }
+  }
+}
 
 /* ========================================================
 Mobile Styles

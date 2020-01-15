@@ -161,6 +161,10 @@ body > .zoomed {
       margin: 0 auto;
       cursor: zoom-out;
     }
+
+    .caption {
+      display: none;
+    }
   }
 
   

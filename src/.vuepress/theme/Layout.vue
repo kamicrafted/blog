@@ -23,7 +23,9 @@
 
       <Home key="home" v-else-if="$page.frontmatter.home" />
 
-      <Photos key="photos" v-else-if="$page.frontmatter.photos" />
+      <Photos key="photos" v-else-if="$page.frontmatter.layout" />
+
+      <Bookshelf key="bookshelf" v-else-if="$page.frontmatter.layout" />
 
       <Page key="page" v-else :sidebar-items="sidebarItems">
         <slot name="page-top" slot="top" />
@@ -43,6 +45,7 @@ import nprogress from "nprogress";
 import Blog from "./layout/Blog.vue";
 import Home from "./layout/Home.vue";
 import Photos from "./layout/Photos.vue";
+import Bookshelf from "./layout/Bookshelf.vue";
 import Page from "./layout/Page.vue";
 import Navbar from "./components/Navbar.vue";
 import Sidebar from "./components/Sidebar.vue";
@@ -56,6 +59,7 @@ export default {
     Blog,
     Home,
     Photos,
+    Bookshelf,
     Page,
     Sidebar,
     Navbar,

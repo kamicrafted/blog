@@ -304,7 +304,7 @@ function find(page, items, offset) {
 }
 
 .gallery {
-  max-width: $galleryWidth;
+  max-width: $customWidth;
 }
 
 @media (max-width: $MQMobile) {

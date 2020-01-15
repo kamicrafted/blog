@@ -32,10 +32,14 @@
         </a>
       </li>
     </ul>
+
+    <a class="link-rss" href="/rss.xml"><i class="icon icon-rss" data-feather="rss"></i></a>
   </div>
 </template>
 
 <script>
+import feather from 'feather-icons';
+
 export default {
   data() {
     return {
@@ -98,6 +102,10 @@ export default {
   },
 
   methods: {
+    featherReplace: function () {
+      feather.replace()
+    },
+
     getPageLocalePath(page) {
       for (const localePath in this.$site.locales || {}) {
         if (localePath !== "/" && page.path.indexOf(localePath) === 0) {
@@ -143,6 +151,10 @@ export default {
     unfocus() {
       this.focusIndex = -1;
     }
+  },
+
+  mounted () {
+    this.featherReplace()
   }
 };
 </script>
@@ -155,6 +167,22 @@ export default {
   position: absolute;
   right: 30px;
   margin-right: 1rem;
+
+  .link-rss {
+    color: white;
+    opacity: 0.7;
+    position: relative;
+    top: 8px;
+    transition: all .15s $easeInOutQuad;
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    svg {
+      stroke-width: 3px;
+    }
+  }
 
   input {
     cursor: text;

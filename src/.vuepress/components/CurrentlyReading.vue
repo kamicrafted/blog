@@ -32,7 +32,7 @@ export default {
   position: relative;
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 10px 15px 10px 10px;
   margin-top: 25px;
   background-color: lighten($color-bg, 10%);
   border-radius: 4px;

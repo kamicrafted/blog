@@ -151,7 +151,7 @@ $navbar-horizontal-padding: 1.5rem;
     padding-left: 1.5rem;
     box-sizing: border-box;
     white-space: nowrap;
-    font-size: 0.9rem;
+    font-size: 1rem;
 
     .search-box {
       flex: 0 0 auto;
@@ -168,6 +168,8 @@ $navbar-horizontal-padding: 1.5rem;
   .navbar {
     flex-direction: row-reverse;
     padding-left: 4rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
     .can-hide {
       display: none;
