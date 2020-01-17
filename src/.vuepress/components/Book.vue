@@ -1,8 +1,13 @@
 <template>
-  <a class="book" :href="link">
-    <img class="img" v-bind="$attrs">
-    <div v-if="title" class="book__info">
-      <h2 class="book__title">{{ title }}</h2>
+  <a class="book" :href="link" target="_blank">
+    <div class="book__genre">
+      {{ type }}
+    </div>
+    <div class="book__details">
+      <img class="book__img" :class="'book__img--' + size" v-bind="$attrs">
+      <div v-if="title" class="book__info">
+        <h2 class="book__title">{{ title }}</h2>
+      </div>
     </div>
   </a>
 </template>
@@ -21,7 +26,9 @@ export default {
 
   props: [
     "title",
-    "link"
+    "link",
+    "size",
+    "type"
   ],
 
   methods: {
@@ -39,9 +46,6 @@ export default {
 }
 </script>
 
-
-
-
 <style lang="scss" scoped>
 @import "../theme/styles/app";
 
@@ -49,67 +53,96 @@ export default {
   position: relative;
   display: flex;
   align-items: flex-end;
-  min-height: 300px;
+  min-height: 280px;
   width: calc(100% / 7);
-  padding: 0 5px;
-  margin-bottom: 2.5rem;
+  padding: 0 10px;
   color: white;
-  transition: all .42s $easeInOutCubic;
+  transition: all .42s $easeInOutQuad;
 
   &:hover {
     z-index: 100;
-    transform: scale(1.15) translateY(-20px);
+    transform: scale(1.15) translateY(-55px);
 
     img {
       box-shadow: 0 30px 40px -10px rgba(black, .8);
     }
 
+    .book__details {
+      opacity: 1;
+      bottom: 0;
+      padding-bottom: 10px;
+    }
+
     .book__info {
       opacity: 1;
-      bottom: -20px;
+      padding: 10px 0;
+      bottom: -40px;
+    }
+
+    .book__genre {
+      opacity: 1;
+      top: 0px;
     }
   }
 
-  &:before {
-    content: '';
+  &__genre {
     position: absolute;
-    z-index: 1;
-    width: calc(100% - 10px);
-    height: 1px;
-    border-radius: 0 0 2px 2px;
-    background-color: rgba(#666, .7);
+    z-index: -1;
+    opacity: 0;
+    top: 20px;
+    left: 50%;
+    padding: 0 10px;
+    background-color: lighten($color-bg, 30%);
+    text-align: center;
+    font-family: $font-headline;
+    font-size: .7rem;
+    font-weight: 500;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    transform: translateX(-50%);
+    transition: all .3s $easeInOutQuad;
   }
 
-  &:after {
-    content: '';
-    position: absolute;
-    z-index: 0;
-    width: calc(100% - 10px);
-    height: 3px;
-    border-radius: 0 0 2px 2px;
-    background-color: rgba(#aaa, .7);
+  &__details {
+    position: relative;
+    width: 100%;
+
+    &:after {
+      content: '';
+      position: absolute;
+      z-index: 0;
+      width: 100%;
+      height: 3px;
+      border-radius: 0 0 2px 2px;
+      background-color: rgba(#aaa, .7);
+    }
   }
 
   &__info {
-    width: calc(100% - 10px);
-    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    text-align: center;
     position: absolute;
-    bottom: -19px;
-    transition: all .5s $easeInOutCubic;
+    z-index: -1;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    // opacity: 0;
+    transition: all .3s $easeInOutQuad;
     transition-delay: .1s;
   }
 
   &__title {
-    text-align: center;
-    font-weight: 500;
-    font-size: .9rem;
+    width: 100%;
   }
 
-  img {
+  &__img {
     display: block;
     width: 100%;
-    border-radius: 2px;
-    transition: all .5s $easeInOutCubic;
+    border-radius: 2px 2px 0 0;
+    transition: all .3s $easeInOutQuad;
     box-shadow: 0 10px 5px -7px rgba(black, .6);
   }
 }
