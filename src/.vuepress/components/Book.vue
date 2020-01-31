@@ -1,10 +1,10 @@
 <template>
-  <a class="book" :href="link" target="_blank">
+  <a class="book" :class="'book--' + size" :href="link" target="_blank">
     <div class="book__genre">
       {{ type }}
     </div>
     <div class="book__details">
-      <img class="book__img" :class="'book__img--' + size" v-bind="$attrs">
+      <img class="book__img" v-bind="$attrs">
       <div v-if="title" class="book__info">
         <h2 class="book__title">{{ title }}</h2>
       </div>
@@ -53,11 +53,11 @@ export default {
   position: relative;
   display: flex;
   align-items: flex-end;
-  min-height: 280px;
+  min-height: 300px;
   width: calc(100% / 7);
   padding: 0 10px;
   color: white;
-  transition: all .42s $easeInOutQuad;
+  transition: all .32s $easeInOutQuad;
 
   &:hover {
     z-index: 100;
@@ -80,8 +80,8 @@ export default {
     }
 
     .book__genre {
-      opacity: 1;
-      top: 0px;
+      opacity: .7;
+      bottom: -52px;
     }
   }
 
@@ -89,19 +89,22 @@ export default {
     position: absolute;
     z-index: -1;
     opacity: 0;
-    top: 20px;
+    bottom: 0;
     left: 50%;
-    padding: 0 10px;
-    background-color: lighten($color-bg, 30%);
+    padding: 0;
+    // background-color: lighten($color-bg, 30%);
     text-align: center;
     font-family: $font-headline;
     font-size: .7rem;
     font-weight: 500;
     letter-spacing: .5px;
     text-transform: uppercase;
+    text-shadow: 0 1px 0 rgba(white, .25);
+    color: darken($color-bg, 30%);
     border-radius: 50px;
     transform: translateX(-50%);
-    transition: all .3s $easeInOutQuad;
+    transition-delay: .5s;
+    transition: all .4s $easeInOutQuad;
   }
 
   &__details {
@@ -130,7 +133,7 @@ export default {
     bottom: -10px;
     width: 100%;
     // opacity: 0;
-    transition: all .3s $easeInOutQuad;
+    transition: all .2s $easeInOutQuad;
     transition-delay: .1s;
   }
 
@@ -144,6 +147,22 @@ export default {
     border-radius: 2px 2px 0 0;
     transition: all .3s $easeInOutQuad;
     box-shadow: 0 10px 5px -7px rgba(black, .6);
+  }
+
+  &--sm {
+    width: 150px;
+  }
+
+  &--md {
+    width: 175px;
+  }
+
+  &--lg {
+    width: 195px;
+  }
+
+  &--xl {
+    width: 220px;
   }
 }
 </style>
